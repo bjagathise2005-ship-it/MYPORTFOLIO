@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #000, #333);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px;
+      background-color: black;
+    }
+    .container:hover{
+      box-shadow: 10px 10px 10px lime;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hero img {
+      width: 280px;
+      height: 280px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 5px solid #000;
+    }
+    .skills span {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 8px;
+      font-size: 16px;
+    }
+    .j1{
+      height: 100px;
+      width: 100px;
+      border: 1px solid white;
+      background-color: red;
+    }
+    .skills:hover{
+       box-shadow: 20px 20px 20px 20px lime;
+    }
+    .section {
+      padding: 30px;
+    }
+    .project {
+      background: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000;
+      color: #fff;
+      margin-top: 40px;
+    }
+      /* Animations */
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .slide {
+      animation: slideIn 1.2s ease-in-out;
+    }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .hero:hover img {
+      transform: scale(1.05);
+      transition: 0.4s ease;
+    }
+    .project:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px lime;
+      transition: 0.3s ease;
+    }
+    body {
+      background: linear-gradient(-45deg, #f0f0f0, #e3e3e3, #ffffff, #f7f7f7);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#extra">Extra</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <script>
+    // Dark/Light Mode Toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+  <style>
+    .theme-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .theme-btn:hover { transform: scale(1.05); }
+
+    body.dark {
+      background: #111;
+      color: #eaeaea;
+    }
+    body.dark header { background: #222; }
+    body.dark .project { background: #1d1d1d; color: #fff; }
+    body.dark nav a { color: #ddd; }
+    body.dark footer { background: #222; }
+
+    .photo-frame {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #000;
+      transition: 0.4s;
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-frame:hover { 
+        transform: scale(1.07); 
+        box-shadow: 10px 10px 10px black;
+    }
+
+    .timeline {
+      border-left: 4px solid #000;
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+    .timeline div {
+      margin: 20px 0;
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .resume-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .resume-btn:hover { transform: scale(1.05); }
+  </style>
+
+  <div class="theme-btn" onclick="toggleTheme()">Toggle Theme</div>
+
+  <div class="container">
+    <section class="hero fade-in" id="about">
+      <div>
+        <h2>Hello, I'm Jagadeesh</h2>
+        <p style="font-weight: bold;">I am a dedicated B.E. CSE 3rd year student with strong skills in Python, HTML, CSS,<br> JavaScript, and AI fundamentals. I have won multiple coding and paper presentation prizes,  <br>including recognition at Anna University Trichy. I have completed an AI course and internship <br> with Rinex and gained leadership experience as the Chairperson of the CSI Club and an active  <br>NSS volunteer. I also worked on a neuromorphic computing project, strengthening my technical <br> and research abilities. With a strong work ethic, quick learning ability, and passion for innovation,<br> I am well-prepared for internship opportunities..</p>
+      </div>
+      <div class="photo-frame"><img src="/myphoto.jpg.jpg" alt="My Photo">
+    </section>
+
+    <section class="section slide" id="skills">
+      <h2 style="color: white;">Skills</h2>
+      <div class="skills">
+        <span>Python</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Git & GitHub</span>
+        <span>DSA Basics</span>
+        <span>SQL</span>
+        <span>java basics</span>
+        
+      </div>
+    </section>
+
+    <section class="section fade-in" id="projects">
+      <h2 style="color: white;">Projects</h2>
+
+      <div class="project">
+        <h3>• Portfolio Website</h3>
+        <p>• A stylish personal portfolio created using HTML, CSS, and JavaScript.</p>
+        <p>• Tic Tac Toe</p>
+        <p>• Spider man Card</p>
+        <p>• Arduino based projects</p>
+        <p>• college Attendnance app</p>
+      </div>
+
+      <div class="project">
+        <h3>To-Do List App</h3>
+        <p>A productivity tool built using JavaScript for task management.</p>
+      </div>
+
+      <div class="project">
+        <h3>Weather App</h3>
+        <p>An API-based weather checking application created for practice.</p>
+      </div>
+    </section>
+
+    <section class="section slide" id="extra">
+      <h2 style="color: white;">Timeline</h2>
+      <div class="timeline">
+        <div>🏆 Won multiple symposium first prizes in Coding & Paper Presentation</div>
+        <div>🎓 Completed Artificial Intelligence course at Rinex</div>
+        <div>📜 Received Internship Certificate & Campus Ambassador Certificate</div>
+        <div>🧠 Worked on Neuromorphic Computing Project (CMD)</div>
+        <div>👤 Became Chairperson of CSI Club</div>
+        <div>🌍 Active Participation in NSS Social Activities</div>
+        <div>🧠 over10+ won prizes in paper presentation </div>
+      </div>
+
+      <a class="resume-btn" href="#" style="background-color: red;">Download Resume</a>
+
+      <h2 style="color: red;">Achievements & Roles</h2>
+      <h2>Achievements & Roles</h2>
+      <div class="project">
+        <h3>🏆 Symposium Achievements</h3>
+        <p>• First prize in Coding Competitions at multiple symposiums<br>
+           • First prize in Paper Presentation events over 10+ colleges<br>
+           • 3rd Prize in Anna University Trichy Campus Symposium (Paper Presentation)
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>🎓 Certifications</h3>
+        <p>• Rinex Internship Certificate<br>
+           • Campus Ambassador Certificate<br>
+           • Completed Artificial Intelligence Course at Rinex <br>
+           • Dhanalakshmi srinivasan national level technical symposium 1st prize in paper presentation and debugging contest <br>
+           • Anna University Trichy Campus paper presentation 3rd prize 
+
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>👥 Leadership & Social Activities</h3>
+        <p>• Chairperson of CSI Club<br>
+           • Active member of NSS (Social Activities & Events) <br>
+           • LEO club active member <br>
+           • Rotract club  vice president
+
+
+        </p>
+      </div>
+
+      <div class="project" style="background-color: lime;">
+        <h3>🧠 Research & Projects</h3>
+        <p>• Worked on Neuromorphic Computing Project<br>
+          • Portfolio <br>
+          •  Model flipkart app using html,css.js <br>
+          •  Model instagram app <br>
+          • Engineering notes downloader
+               </p>
+      </div>
+
+     <class class="j1"> <h2 style="color: white; ;">Languages Known</h2></class>
+      <p style="color: white;"> • English<br>• Tamil <br>• French basics <br>• Hindi basics
+    </section>
+
+    <section class="section" id="contact">
+      <h2 style="color: white;">Contact</h2>
+      <p style="color: white;">Email: bjagathise2005@gmail.com</p>
+      <p style="color: white;">Phone: 8637662831</p>
+    </section>
+  </div>
+
+  <footer>
+    <p style="color: white;">© 2025 My Portfolio</p>
+  </footer>
+</body>
+</html>
